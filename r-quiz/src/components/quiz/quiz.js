@@ -9,23 +9,44 @@ import {quizLoaded} from '../../actions/action'
 import './quiz.css'
 
 class  QuizList extends React.Component  {
+
+    componentDidMount () {
+        const {quizstoreService} = this.props
+        const data = quizstoreService.getQuiz()
+
+        this.props.quizLoaded(data)
+    
+    }
+
     render () {
-        const answers = [
-            {text: "вопрос 1"},
-            {text: "вопрос 2"},
-            {text: "вопрос 3"},
-            {text: "вопрос 4"}
-        ]
+
+        const {quiz} = this.props
+
+        // const answers = [
+        //     {text: "вопрос 5"},
+        //     {text: "вопрос 2"},
+        //     {text: "вопрос 3"},
+        //     {text: "вопрос 4"}
+        // ]
         return (
             <div className="Quiz">
                 <div className="QuizWrapper">
                     <h1>Quiz</h1>
     
-                    <ActiveQuiz answers={answers}/>
+                    <ActiveQuiz answers={quiz}/>
                 </div>
             </div>
         )
     }
 }
 
-export default QuizList;
+const mapStateToProps = ({quiz}) => {
+    return {quiz}
+}
+
+const mapDispatchToProps = {
+    quizLoaded
+}
+
+export default withQuizService()(
+    connect(mapStateToProps, mapDispatchToProps)(QuizList));

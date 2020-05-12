@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom'
 
-import  HomePage  from '../pages/home-page';
+import  HomePage  from '../pages/home-page'
 import Loader from '../loader/loader'
 
 
@@ -10,11 +10,11 @@ function App() {
     <Switch>
       <Route
         path='/'
-        component={HomePage}
-        exact/>
+        component = {HomePage}
+        exact />
 
       <Route
-        path='/avtorization'
+        path='/advantage'
         component={Loader}/>  
 
     </Switch>

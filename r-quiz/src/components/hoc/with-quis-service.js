@@ -1,7 +1,7 @@
 import React from 'react';
 import {QuizServiceConsumer} from '../quiz-service-context/quiz-service-context'
 
-const withQuizService = (Wrapped) => {
+const withQuizService = () => (Wrapped) => {
     return (props) => {
         return (
             <QuizServiceConsumer>

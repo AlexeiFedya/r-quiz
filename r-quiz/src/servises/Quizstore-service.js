@@ -1,9 +1,9 @@
-export default class QuizStoreService {
+class QuizStoreService {
     getQuiz () {
         return [
             {
                 id: 1,
-                text: 'Вопрос 1',
+                text: 'Вопрос 5',
             },
             {
                 id: 2,
@@ -16,7 +16,9 @@ export default class QuizStoreService {
             {
                 id: 4,
                 text: 'Вопрос 4',
-            },
+            }
         ]
     }
 }
+
+export default QuizStoreService

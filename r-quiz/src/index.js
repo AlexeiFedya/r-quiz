@@ -9,15 +9,15 @@ import store from './store/store'
 import QuizStoreService from './servises/Quizstore-service'
 import {QuizServiceProvider} from './components/quiz-service-context/quiz-service-context'
 
-const quizstoreservice = new QuizStoreService()
+const quizstoreService = new QuizStoreService()
 
 
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundry>
-      <QuizServiceProvider value={quizstoreservice}>
+      <QuizServiceProvider value={quizstoreService}>
         <Router>
-          <App />
+          <App/>
         </Router>
       </QuizServiceProvider>
     </ErrorBoundry>
